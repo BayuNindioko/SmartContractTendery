@@ -8,12 +8,12 @@ contract Tendery {
     struct Answer {
         uint256 id;
         address author;
-        string content;
         string kodePertanyaan;
+        string content;
     }
 
     mapping(address => Answer[]) public answers;
-    event AnswerCreated(uint256 id, address author, string content, string kodePertanyaan);
+    event AnswerCreated(uint256 id, address author, string kodePertanyaan, string content);
 
     function createAnswer(string memory _kodePertanyaan, string memory _answer) public {
         require(bytes(_answer).length <= MAX_ANSWER_LENGTH, "Answer is too long!");
@@ -23,11 +23,10 @@ contract Tendery {
             author: msg.sender,
             kodePertanyaan: _kodePertanyaan,
             content: _answer
-            
         });
 
         answers[msg.sender].push(newAnswer);
-        emit AnswerCreated(newAnswer.id, newAnswer.author, newAnswer.content, newAnswer.kodePertanyaan);
+        emit AnswerCreated(newAnswer.id, newAnswer.author,  newAnswer.kodePertanyaan,newAnswer.content);
     }
 
     function getAnswer(uint _i) public view returns (Answer memory) {
