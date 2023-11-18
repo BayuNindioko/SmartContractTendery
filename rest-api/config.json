@@ -1,0 +1,7 @@
+{
+  "url_rpc": "http://127.0.0.1:7545",
+  "address_smart_contract": "0xCB3337D663CF14fa72c0C23e75892999Fa43F3c6",
+  "dev_private_key": "0x0ec96aa895a8785aa21fb84a84bc7bfa7f28c9520acbc0e1a94f7f217db5150e",
+  "dev_give_coin": "0.1",
+  "res_api_port": "3999"
+}
